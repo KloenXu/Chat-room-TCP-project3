@@ -109,6 +109,7 @@ void *myrecvmsg(void *arg)
 		}
 		if (strcmp(recv_msg1, "window\n") == 0)
 		{
+			bzero(windowname,sizeof(windowname));
 			recv(sockfd, windowname, sizeof(windowname), 0);
 			printf("windowname:%s\n", windowname);
 			flag = 2;
